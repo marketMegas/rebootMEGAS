@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-home.css">
 </head>
 
 <body>
@@ -99,7 +100,7 @@ HEADER
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="www.megas.com.co/soluciones">
+                            <a class="nav-link" href="https://www.megas.com.co/soluciones">
                                 Contacto
                             </a>
                         </li>
@@ -123,6 +124,49 @@ HEADER
          HERO
     =========================================== -->
     <section class="hero">
+
+        <!-- Slider de fondo dinámico (estilo megasALTERNATIVA) -->
+        <div class="slider-container">
+            <div class="slide active">
+                <div class="slide-image-wrapper">
+                    <img src="https://i.imgur.com/nrW9elB.png" alt="Energía Megas GLP">
+                </div>
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide">
+                <div class="slide-image-wrapper">
+                    <img src="https://i.imgur.com/TA16rcC.jpeg" alt="Familia con GLP Megas">
+                </div>
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide">
+                <div class="slide-image-wrapper">
+                    <img src="https://i.imgur.com/9P3znaP.png" alt="Hogares con GLP Megas">
+                </div>
+                <div class="slide-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Flechas de navegación -->
+        <button class="slider-arrow prev-arrow" id="prevSlide" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="white" />
+            </svg>
+        </button>
+        <button class="slider-arrow next-arrow" id="nextSlide" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="white" />
+            </svg>
+        </button>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+            <span>DESPLÁCESE HACIA ABAJO</span>
+            <svg viewBox="0 0 24 24" width="16" height="16">
+                <path d="M12 21l-9-9 1.41-1.41L11 17.17V3h2v14.17l6.59-6.58L21 12l-9 9z" fill="white" />
+            </svg>
+        </div>
+
         <div class="container">
             <div class="row align-items-center">
 
@@ -172,14 +216,14 @@ HEADER
 
   <!-- BOTONES -->
                         <div class="hero-buttons">
-                            <a href="tel:+573145747836" class="btn btn-call">
+                            <a href="tel:+573225472787" class="btn btn-call">
                                 <i class="bi bi-telephone-fill"></i>
                                 <div>
                                     Llámanos ahora
                                     <small>+57 322 5472787</small>
                                 </div>
                             </a>
-                            <a href="https://wa.me/573145747836" class="btn btn-quote">
+                            <a href="https://wa.me/573225472787" class="btn btn-quote">
                                 <i class="bi bi-file-earmark-text"></i>
                                 Cotizar en línea
                             </a>
@@ -358,7 +402,7 @@ HEADER
                 </div>
             </div>
            <div class="why-us-btn-wrap text-center mt-4">
-                <a href="https://wa.me/573145747836" class="btn btn-service px-5 py-3 fs-5">
+                <a href="https://wa.me/573225472787" class="btn btn-service px-5 py-3 fs-5">
                     Solicitar servicio
                     <i class="bi bi-arrow-right-circle-fill ms-2"></i>
                 </a>
@@ -422,16 +466,14 @@ HEADER
                         <div class="col-md-4">
                             <div class="security-item">
                                 <div class="security-icon">
-
-   <div class="security-icon">
-                                    <i class="bi bi-people-fill"></i>
+                                    <i class="bi bi-headset"></i>
                                 </div>
                                 <div>
                                     <h5>
-                                        Seguridad certificada
+                                        Atención 24/7
                                     </h5>
                                     <p>
-                                        Cumplimos normativas técnicas para manejo de gas licuado y redes.
+                                        Emergencias y soporte técnico disponibles todos los días del año.
                                     </p>
                                 </div>
                             </div>
@@ -462,9 +504,11 @@ HEADER
                     <img src="https://i.imgur.com/9P3znaP.png" class="img-fluid" alt="Aliado energético integral" style="border-radius: 18px; max-height: 588px; object-fit: cover; width: 100%;">
                 </div>
             </div>
-            <div class="row mt-5 g-4">
-
+            <div class="section-title">
+                <span class="section-mini">Compromiso social y ambiental</span>
                 <h2>Impacto Bienestar</h2>
+            </div>
+            <div class="row g-4">
                 <!-- ITEM 1 -->
                             <div class="col-6 col-md-3">
                                 <div class="counter-card">
@@ -532,7 +576,7 @@ HEADER
                         </div>
                     </div>
                     <div class="col-lg-3 text-center">
-                        <a href="https://wa.me/573145747836" class="btn btn-light btn-lg">
+                        <a href="https://wa.me/573225472787" class="btn btn-light btn-lg">
                             Cotizar ahora
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -628,6 +672,47 @@ HEADER
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+        // Slider dinámico del hero (estilo megasALTERNATIVA)
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+            if (!slides.length || !prevBtn || !nextBtn) return;
+
+            let currentSlideIndex = 0;
+            let slideInterval;
+            const intervalTime = 7000;
+
+            function showSlide(index) {
+                slides[currentSlideIndex].classList.remove('active');
+                currentSlideIndex = (index + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add('active');
+            }
+
+            function nextSlide() { showSlide(currentSlideIndex + 1); }
+            function prevSlide() { showSlide(currentSlideIndex - 1); }
+
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+            prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+
+            startInterval();
+        });
+
+        // Header transparente sobre el hero: activa home-scrolled al bajar
+        window.addEventListener('scroll', () => {
+            document.body.classList.toggle('home-scrolled', window.scrollY > 60);
+        }, { passive: true });
+    </script>
 </body>
 
 </html>
