@@ -6,322 +6,1132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros | Megas</title>
     <meta name="description" content="Conoce a Megas Energía: nuestra historia, misión, visión, valores y el equipo detrás de las soluciones de Gas GLP para Colombia.">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --ground: #18242c;
+            --surface-1: #202c36;
+            --surface-2: #2d3a45;
+            --header-bg: #d8e4dd;
+            --ink: #f6f8fb;
+            --ink-dim: #9fb0bb;
+            --light: #f6f8fb;
+            --surface-light: #ffffff;
+            --muted: #5d6775;
+            --accent: #f6811e;
+            --accent-hover: #ff9842;
+            --green: #5fbd44;
+            --teal: #01825b;
+            --green-deep: #2f8d3c;
+            --line-dark: rgba(255, 255, 255, 0.07);
+            --line-light: rgba(24, 36, 44, 0.10);
+            --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.35);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--ground);
+            padding-top: 132px;
+            -webkit-font-smoothing: antialiased;
+            text-wrap: pretty;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: 0;
+            background: none;
+            color: inherit;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            line-height: 1.12;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            font-family: var(--font-body);
+            border-radius: 6px;
+            transition: background .15s ease-out, border-color .15s ease-out, color .15s ease-out;
+            white-space: nowrap;
+        }
+
+        .btn i {
+            font-size: 18px;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 22px;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-hover);
+        }
+
+        /* ------------------------------ TOPBAR ------------------------------ */
+        .topbar {
+            background: #22322c;
+            border-bottom: 1px solid var(--line-dark);
+            font-size: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 32px;
+        }
+
+        .topbar-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .topbar-tag i {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .topbar-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .topbar-phone i {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .topbar-social {
+            display: inline-flex;
+            gap: 14px;
+        }
+
+        .topbar-social a {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color .15s ease-out;
+        }
+
+        .topbar-social a:hover {
+            color: var(--accent);
+        }
+
+        /* ------------------------------ HEADER ------------------------------ */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--line-light);
+            transition: box-shadow .25s var(--ease-out), background .25s var(--ease-out);
+        }
+
+        body.home-scrolled .main-header {
+            box-shadow: 0 8px 30px rgba(24, 36, 44, 0.14);
+        }
+
+        .nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 72px;
+        }
+
+        .brand img {
+            height: 56px;
+            width: auto;
+        }
+
+        .nav-panel {
+            display: grid;
+            grid-template-rows: 1fr;
+            transition: grid-template-rows .35s var(--ease-out);
+        }
+
+        .nav-panel-inner {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin: 0 auto;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--ground);
+            padding: 5px 0;
+            position: relative;
+            transition: color .15s ease-out;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: right .22s var(--ease-out);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--green-deep);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            right: 0;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .nav-toggle span {
+            width: 22px;
+            height: 2px;
+            background: var(--ground);
+            border-radius: 2px;
+            transition: transform .25s var(--ease-out), opacity .25s var(--ease-out);
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* ------------------------------ QUIÉNES SOMOS ------------------------------ */
+        .about-section {
+            background: var(--surface-light);
+            padding: 96px 0 40px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img-wrap img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 16px;
+            border: 1px solid var(--line-light);
+            box-shadow: 0 24px 60px rgba(24, 36, 44, 0.12);
+        }
+
+        .about-badge {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #ffffff;
+            border: 1px solid var(--line-light);
+            border-radius: 12px;
+            padding: 14px 18px;
+            box-shadow: 0 12px 32px rgba(24, 36, 44, 0.10);
+        }
+
+        .counter-icon {
+            width: 52px;
+            height: 56px;
+            padding: 3px;
+            border-radius: 10px;
+            background: #ffffff;
+            border: 1px solid var(--line-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: none;
+            overflow: hidden;
+        }
+
+        .counter-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .about-badge strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--ground);
+        }
+
+        .about-badge span {
+            font-size: 12.5px;
+            color: var(--muted);
+        }
+
+        .section-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--accent);
+        }
+
+        .section-mini::after {
+            content: "";
+            width: 34px;
+            height: 1px;
+            background: currentColor;
+            opacity: .6;
+        }
+
+        .about-title {
+            font-size: clamp(1.4rem, 3vw, 2.4rem);
+            font-weight: 600;
+            margin: 18px 0 20px;
+            color: var(--ground);
+            text-align: center;
+        }
+
+        .title-line-1 {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 56ch;
+        }
+
+        /* ------------------------------ TIMELINE ------------------------------ */
+        .timeline-container {
+            margin-top: 96px;
+        }
+
+        .timeline-title {
+            font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+            font-weight: 600;
+            margin-bottom: 44px;
+            color: var(--ground);
+        }
+
+        .timeline-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 44px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--line-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            text-align: center;
+        }
+
+        .node-avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--line-light);
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: circle(71% at 50% 50%);
+            transition: border-color .15s ease-out;
+        }
+
+        .node-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .node-year {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--green-deep);
+            font-size: 17px;
+        }
+
+        .node-label {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .node-hover {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            width: max-content;
+            max-width: 240px;
+            background: #ffffff;
+            border: 1px solid var(--line-light);
+            border-radius: 10px;
+            padding: 12px 14px;
+            box-shadow: 0 12px 32px rgba(24, 36, 44, 0.12);
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--muted);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 20;
+            transition: opacity .2s ease-out, visibility .2s ease-out, transform .2s ease-out;
+        }
+
+        .timeline-item:hover .node-hover,
+        .timeline-item:focus-within .node-hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .timeline-item.active .node-avatar {
+            border-color: rgba(95, 189, 68, 0.6);
+            box-shadow: 0 0 0 6px rgba(95, 189, 68, 0.12);
+        }
+
+        /* ------------------------------ MEGAS FULL ------------------------------ */
+        .megas-full-section {
+            padding: 96px 0;
+        }
+
+        .megas-full-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .megas-title {
+            font-weight: 700;
+            line-height: 1.04;
+        }
+
+        .megas-title span {
+            display: block;
+            font-size: clamp(2.6rem, 6vw, 4.4rem);
+            letter-spacing: -0.03em;
+        }
+
+        .megas-title .orange-text {
+            color: var(--accent);
+        }
+
+        .megas-col-img img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 16px;
+            border: 1px solid var(--line-dark);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* ------------------------------ CTA ------------------------------ */
+        .cta-section {
+            background: var(--light);
+            padding: 72px 0;
+        }
+
+        .cta-box {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            align-items: center;
+            gap: 28px;
+            background: var(--surface-light);
+            border: 1px solid var(--line-light);
+            border-radius: 16px;
+            padding: 44px 52px;
+            box-shadow: 0 24px 60px rgba(24, 36, 44, 0.12);
+        }
+
+        .cta-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .cta-box .icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: rgba(246, 129, 30, 0.14);
+            border: 1px solid rgba(246, 129, 30, 0.35);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex: none;
+        }
+
+        .cta-left h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--ground);
+        }
+
+        .cta-left p {
+            color: var(--muted);
+            margin: 0;
+            font-size: 14.5px;
+        }
+
+        .cta-btn {
+            justify-self: center;
+            padding: 16px 34px;
+            font-size: 16px;
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .cta-btn:hover {
+            background: #2f8d3c;
+            border-color: #2f8d3c;
+        }
+
+        .cta-contact {
+            text-align: right;
+        }
+
+        .cta-contact span {
+            display: block;
+            font-size: 12.5px;
+            color: var(--muted);
+        }
+
+        .cta-contact strong {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--ground);
+        }
+
+        /* ------------------------------ FOOTER ------------------------------ */
+        .footer {
+            background: #22322c;
+            padding: 76px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.4fr;
+            gap: 48px;
+        }
+
+        .footer-col h5 {
+            font-size: 15px;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .footer-col p {
+            color: #ffffff;
+            font-size: 14.5px;
+            line-height: 1.6;
+            max-width: 34ch;
+            margin-bottom: 18px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+
+        .footer-social a {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color .15s ease-out;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        .footer-col ul {
+            display: grid;
+            gap: 8px;
+        }
+
+        .footer-col ul a {
+            color: #ffffff;
+            font-size: 14px;
+            transition: color .15s ease-out;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .footer-contact i {
+            color: var(--accent);
+            margin-top: 3px;
+        }
+
+        .footer hr {
+            border: 0;
+            border-top: 1px solid var(--line-dark);
+            margin-top: 40px;
+        }
+
+        .footer-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+            padding-top: 36px;
+        }
+
+        .footer-logos img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #ffffff;
+            padding-top: 24px;
+        }
+
+        .footer-bottom .legal {
+            display: flex;
+            gap: 22px;
+        }
+
+        .footer-bottom .legal a:hover {
+            color: var(--accent);
+        }
+
+        /* ------------------------------ RESPONSIVE ------------------------------ */
+        @media (max-width: 1199.98px) {
+            body {
+                padding-top: 106px;
+            }
+
+            body.menu-open {
+                padding-top: 132px;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-panel {
+                grid-template-rows: 0fr;
+            }
+
+            .main-header.open .nav-panel {
+                grid-template-rows: 1fr;
+            }
+
+            .nav-panel-inner {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+                padding-bottom: 0;
+                min-height: 0;
+            }
+
+            .main-header.open .nav-panel-inner {
+                padding-bottom: 26px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+                margin: 0;
+            }
+
+            .nav-links a {
+                padding: 12px 0;
+                font-size: 13px;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .topbar-tag,
+            .topbar-social a {
+                color: var(--muted);
+            }
+
+            .topbar-phone {
+                color: #ffffff;
+            }
+
+            .topbar-phone i {
+                color: var(--accent);
+            }
+
+            .nav-links a {
+                color: var(--muted);
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: var(--ground);
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .about-grid,
+            .megas-full-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-img-wrap img,
+            .megas-col-img img {
+                height: 380px;
+            }
+
+            .cta-box {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 32px;
+            }
+
+            .cta-btn {
+                justify-self: start;
+            }
+
+            .cta-contact {
+                text-align: left;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .topbar-tag {
+                display: none;
+            }
+
+            .topbar .container {
+                justify-content: center;
+            }
+
+            .timeline-wrapper {
+                justify-content: flex-start;
+                gap: 28px;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .footer-logos {
+                justify-content: flex-start;
+                gap: 22px;
+            }
+
+            .footer-logos img {
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .brand img {
+                height: 46px;
+            }
+
+            .about-badge {
+                left: 12px;
+                bottom: 12px;
+                padding: 12px 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-
- <!--=====================================================
-        TOP BAR
-    ======================================================-->
-
-   <div class="topbar">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 d-none d-md-block">
-                    <span class="topbar-text">
-                        Energia que respira contigo
+    <!-- ============================================================
+         TOPBAR
+    ============================================================= -->
+    <header class="main-header" id="mainHeader">
+        <div class="topbar">
+            <div class="container">
+                <span class="topbar-tag">
+                    <i class="bi bi-bolt-fill"></i>
+                    Energía que respira contigo
+                </span>
+                <div class="topbar-right">
+                    <a class="topbar-phone" href="tel:+573225472787">
+                        <i class="bi bi-telephone-fill"></i>
+                        +57 322 5472787
+                    </a>
+                    <span class="topbar-social">
+                        <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/megas.sas.esp/" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@megas.sas?lang=es" aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
                     </span>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="topbar-right">
-                        <div class="top-phone">
-                            <i class="bi bi-telephone-fill"></i>
-                            Atención 24/7
-                        </div>
-                        <div class="top-social">
-                            <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/megas.sas.esp/">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                          <a href="https://www.tiktok.com/@megas.sas?lang=es">
-                                <i class="bi bi-tiktok"></i>
-                            </a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+
+        <div class="nav-wrap">
+            <div class="container nav-row">
+                <a class="brand" href="https://www.megas.com.co">
+                    <img src="https://i.imgur.com/dsjyB0p.png" alt="Megas Energía">
+                </a>
+                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navPanel"
+                    aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <div class="nav-panel" id="navPanel">
+                <div class="container nav-panel-inner">
+                    <ul class="nav-links">
+                        <li><a href="https://www.megas.com.co">Inicio</a></li>
+                        <li><a class="active" href="https://www.megas.com.co/nosotros">Nosotros</a></li>
+                        <li><a href="https://www.megas.com.co/soluciones">Soluciones</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="https://www.megas.com.co/soluciones">Contacto</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-
-
-     <!--=====================================================
-        HEADER
-    ======================================================-->
-    <header class="main-header">
-        <nav class="navbar navbar-expand-xl">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="index3.html">
-                    <img src="https://i.imgur.com/dsjyB0p.png" alt="Megas Energía" class="img-fluid">
-                </a>
-                <!-- Botón móvil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-                    aria-controls="mainMenu" aria-expanded="false">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Menú -->
-               <div class="collapse navbar-collapse" id="mainMenu">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="https://www.megas.com.co">
-                                Inicio
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.megas.com.co/nosotros">
-                                Nosotros
-                            </a>
-                        </li>
-                      <li class="nav-item">
-                            <a class="nav-link" href="https://www.megas.com.co/soluciones">
-                                Soluciones
-                            </a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Blog
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.megas.com.co/soluciones">
-                                Contacto
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Botón -->
-                    <div class="header-button">
-                        <a href="#" class="btn btn-service">
-                            Solicitar servicio
-                            <i class="bi bi-arrow-right-circle-fill ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
     </header>
 
-     <!-- ==========================================
-         PAGE HEADER (BREADCRUMB)
-    =========================================== -->
+    <main>
 
-
-    <!-- ==========================================
-         QUIÉNES SOMOS / HISTORIA
-    =========================================== -->
-
-    <section class="about-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="about-img-wrap">
-                        <img src="https://i.imgur.com/MCioDjz.jpeg" alt="Equipo Megas Energía" class="img-fluid">
-                        <div class="about-badge">
-                            <div class="counter-icon">
-                                <i class="bi bi-award-fill"></i>
+        <!-- ============================================================
+             QUIÉNES SOMOS / HISTORIA
+        ============================================================= -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-media">
+                        <div class="about-img-wrap">
+                            <img src="https://i.imgur.com/MCioDjz.jpeg" alt="Equipo Megas Energía">
+                            <div class="about-badge">
+<div class="counter-icon">
+                                <img src="https://i.imgur.com/HENgnDM.jpeg" alt="Certificación de calidad">
                             </div>
-                            <div>
-                                <strong>+8</strong>
-                                <span>años de experiencia</span>
+                                <div>
+                                    <strong>+10</strong>
+                                    <span>Años</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <span class="section-mini">QUIÉNES SOMOS</span>
+                        <h2 class="about-title">
+                            <span class="title-line-1">Megas Energía Alternativa</span><br>Gas licuado Colombia
+                        </h2>
+                        <div class="about-text">
+                            <p>
+                                Desde nuestros inicios en 2015, Megas S.A.S ha estado a la vanguardia de la innovación en
+                                energía renovable. Nuestro recorrido comenzó con proyectos a pequeña escala y se ha
+                                expandido para incluir grandes proyectos de energía y soluciones avanzadas de
+                                almacenamiento de Gas Líquido.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Línea de Tiempo -->
+                <div class="timeline-container">
+                    <h2 class="timeline-title">Nuestra historia:</h2>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-line"></div>
+
+                        <div class="timeline-item active" data-year="2015">
+                            <div class="node-avatar">
+                                <img src="https://i.imgur.com/GszLsQRh.jpg" alt="2015" loading="lazy">
+                            </div>
+                            <div class="node-info">
+                                <span class="node-year">2015</span>
+                                <br>
+                                <span class="node-label">Fundación</span>
+                            </div>
+                            <span class="node-hover">Empresa colombiana de servicios públicos domiciliarios fundada el 27 de noviembre de 2015 en Bogotá. Nació con el propósito de ofrecer soluciones de energía alternativa en el país, especializándose en la comercialización y distribución de Gas Licuado de Petróleo (GLP).</span>
+                        </div>
+
+                        <div class="timeline-item" data-year="2019">
+<div class="node-avatar">
+                                <img src="https://i.imgur.com/qWTWlnml.jpg" alt="2019" loading="lazy">
+                            </div>
+                            <div class="node-info">
+                                <span class="node-year">2019</span>
+                                <br>
+                                <span class="node-label">como creció</span>
+                            </div>
+                            <span class="node-hover">Con el tiempo, expandió su cobertura desde la capital hacia regiones clave como Cundinamarca, la Sabana de Bogotá y Arauca, logrando paulatinamente un alcance a nivel nacional.</span>
+                        </div>
+
+                        <div class="timeline-item" data-year="2020">
+                            <div class="node-avatar">
+                                <img src="https://i.imgur.com/qWTWlnml.jpg" alt="2020" loading="lazy">
+                            </div>
+                            <div class="node-info">
+                                <span class="node-year">2020</span>
+                                <br>
+                                <span class="node-label">momento crucial</span>
+                            </div>
+                            <span class="node-hover">La compañía orientó su estrategia hacia la transición energética, posicionándose como un aliado para llevar energía limpia y económica a zonas rurales y urbanas donde la infraestructura del gas natural convencional no tiene acceso.</span>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024">
+                            <div class="node-avatar">
+                                <img src="https://i.imgur.com/idAcRD5.jpeg" alt="2024" loading="lazy">
+                            </div>
+                            <div class="node-info">
+                                <span class="node-year">2024</span>
+                                <br>
+                                <span class="node-label">tecnología</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2026">
+                            <div class="node-avatar">
+                                <img src="https://i.imgur.com/aatzpfYh.jpg" alt="2026" loading="lazy">
+                            </div>
+                            <div class="node-info">
+                                <span class="node-year">2026</span>
+                                <br>
+                                <span class="node-label">actualidad</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <span class="section-mini">QUIÉNES SOMOS</span>
-                    <h2 class="why-us-title" style="color:var(--dark); font-size:42px;">
-                       Megas Energía Alternativa · Gas licuado Colombia
-                    </h2>
-                    <div class="about-text">
-                        <p>
-                           Desde nuestros inicios en 2012, Megas sas ha estado a la vanguardia de la innovación en energía renovable. Nuestro recorrido comenzó con proyectos  a pequeña escala y se ha expandido para incluir gran>
-                        </p>
-                    </div>
-
-                </div>
-
             </div>
+        </section>
 
-     <!-- Línea de Tiempo -->
-  <div class="timeline-container">
-    <h2 class="timeline-title">Nuestra historia:</h2>
-
-    <div class="timeline-wrapper">
-      <div class="timeline-line"></div>
-
-      <div class="timeline-item active" data-year="2018">
-        <div class="node-avatar">
-          <img src="https://i.imgur.com/Nj02yei.png" alt="2018">
-        </div>
-        <div class="node-info">
-          <span class="node-year">2018</span>
-          <br>
-          <span class="node-label">Fundación</span>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-year="2019">
-        <div class="node-avatar">
-          <img src="https://i.imgur.com/Q2k15GI.png" alt="2019">
-        </div>
-        <div class="node-info">
-          <span class="node-year">2019</span>
-          <br>
-          <span class="node-label">como crecio</span>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-year="2020">
-        <div class="node-avatar">
-          <img src="https://i.imgur.com/qWTWlnm.jpeg" alt="2020">
-        </div>
-        <div class="node-info">
-          <span class="node-year">2020</span>
-          <br>
-          <span class="node-label">momento crucial</span>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-year="2024">
-        <div class="node-avatar">
-          <img src="https://i.imgur.com/idAcRD5.jpeg" alt="2024">
-        </div>
-        <div class="node-info">
-          <span class="node-year">2024</span>
-          <br>
-          <span class="node-label">tecnologia</span>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-year="2026">
-        <div class="node-avatar">
-          <img src="https://i.imgur.com/8W2scg7.jpeg" alt="2026">
-        </div>
-        <div class="node-info">
-          <span class="node-year">2026</span>
-          <br>
-          <span class="node-label">actualidad</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        </div>
-    </section>
-
-
-      <!-- ==========================================
-         MISIÓN / VISIÓN
-    =========================================== -->
-    <section class="megas-full-section">
-       <div class="megas-col-text">
-    <div class="megas-title-box">
-      <h2 class="megas-title">
-        <span>TODO</span>
-        <span>LO QUE</span>
-        <span class="orange-text">MEGAS</span>
-        <span>HACE</span>
-        <span>POR TI</span>
-      </h2>
-    </div>
-  </div>
-
-  <!-- COLUMNA DERECHA -->
-  <div class="megas-col-img">
-    <img
-      src="https://i.imgur.com/seVahOr.jpeg"
-      alt="Megas"
-    />
-  </div>
-    </section>
-
-
-     <!-- ==========================================
-         CTA
-    =========================================== -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="cta-left">
-                            <div class="cta-icon">
-                                <i class="bi bi-calendar-check"></i>
-                            </div>
-                            <div>
-                                <h3>
-                                    ¿Quieres saber más de nosotros?
-                                </h3>
-                                <p>
-                                    Escríbenos y conoce cómo podemos ser tu aliado energético.
-                                </p>
-                            </div>
+        <!-- ============================================================
+             TODO LO QUE MEGAS HACE POR TI
+        ============================================================= -->
+        <section class="megas-full-section">
+            <div class="container">
+                <div class="megas-full-grid">
+                    <div class="megas-col-text">
+                        <div class="megas-title-box">
+                            <h2 class="megas-title">
+                                <span>TODO</span>
+                                <span>LO QUE</span>
+                                <span class="orange-text">MEGAS</span>
+                                <span>HACE</span>
+                                <span>POR TI</span>
+                            </h2>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-center">
-                        <a href="#" class="btn btn-light btn-lg">
-                            Contáctanos
-                            <i class="bi bi-arrow-right"></i>
+                    <div class="megas-col-img">
+                        <img src="https://i.imgur.com/seVahOrl.jpeg" alt="Megas" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             CTA
+        ============================================================= -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box">
+                    <div class="cta-left">
+                        <span class="icon"><i class="bi bi-calendar-check"></i></span>
+                        <div>
+                            <h3>¿Quieres saber más de nosotros?</h3>
+                            <p>Escríbenos y conoce cómo podemos ser tu aliado energético.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-accent cta-btn">
+                        Contáctanos
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <div class="cta-contact">
+                        <span>O llámanos directamente</span>
+                        <strong>Atención 24/7</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <p>Soluciones de GLP seguras, eficientes y sostenibles para hogares, negocios e instituciones</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/megas.sas.esp/" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@megas.sas?lang=es" aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
                         </a>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="cta-contact">
-                            <span>
-                                O llámanos directamente
-                            </span>
-                            <strong>
-                                Atención 24/7
-                            </strong>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-     <!--=====================================================
-        FOOTER
-    ======================================================-->
-      <footer class="footer">
-        <div class="container">
-            <div class="row gy-5">
-                <div class="col-lg-3">
-
-                    <p>
-                        Soluciones de GLP seguras, eficientes y sostenibles para hogares, negocios e instituciones
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/megas.sas.esp/"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@megas.sas?lang=es"><i class="bi bi-tiktok"></i></a>
-                    </div>
-
-
-                </div>
-                <div class="col-lg-2">
+                <div class="footer-col">
                     <h5>Empresa</h5>
                     <ul>
                         <li><a href="https://www.megas.com.co/nosotros">Nosotros</a></li>
                         <li><a href="https://www.megas.com.co/nosotros">Nuestra Historia</a></li>
                         <li><a href="https://www.megas.com.co/nosotros">Solicitud de Suministro</a></li>
-
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="footer-col">
                     <h5>Soluciones</h5>
                     <ul>
                         <li><a href="https://www.megas.com.co/soluciones">GLP Hogares</a></li>
@@ -330,46 +1140,59 @@
                         <li><a href="https://www.megas.com.co/soluciones">autoGLP Movilidad</a></li>
                     </ul>
                 </div>
-
-
-                  <div class="col-lg-3">
+                <div class="footer-col">
                     <h5>Contáctenos</h5>
                     <ul class="footer-contact">
-                        <li>
-                            <i class="bi bi-telephone"></i>
-                            LINEA DE EMERGENCIAS 312 505 6736
-                        </li>
-                        <li>
-                            <i class="bi bi-envelope"></i>
-                             info@megas.co
-                        </li>
-                        <li>
-                            <i class="bi bi-geo-alt"></i>
-                            Colombia
-                        </li>
+                        <li><i class="bi bi-telephone"></i>LÍNEA DE EMERGENCIAS 312 505 6736</li>
+                        <li><i class="bi bi-envelope"></i>info@megas.co</li>
+                        <li><i class="bi bi-geo-alt"></i>Colombia</li>
                     </ul>
                 </div>
             </div>
+
             <hr>
-          <div class="footer-logos-row">
-                <img src="https://i.imgur.com/dsjyB0p.png" alt="Megas Energía" class="footer-brand-logo" style="max-height: 48px; margin-right: 15px;">
-                <img src="https://i.imgur.com/MRtZVE1.png" alt="GASMAX autoglp" class="footer-brand-logo">
-                <img src="https://i.imgur.com/2Pjja9B.png" alt="TAME Gas" class="footer-brand-logo">
-                <img src="https://i.imgur.com/3nuryck.png" alt="GASMAX" class="footer-brand-logo">
+
+            <div class="footer-logos">
+                <img src="https://i.imgur.com/dsjyB0p.png" alt="Megas Energía">
+                <img src="https://i.imgur.com/MRtZVE1.png" alt="GASMAX autoglp" loading="lazy">
+                <img src="https://i.imgur.com/2Pjja9B.png" alt="TAME Gas" loading="lazy">
+                <img src="https://i.imgur.com/3nuryck.png" alt="GASMAX" loading="lazy">
             </div>
+
             <div class="footer-bottom">
-                <p>
-                    © 2026 Megas Energía. Todos los derechos reservados.
-                </p>
-                <div>
+                <p>© 2026 Megas Energía. Todos los derechos reservados.</p>
+                <div class="legal">
                     <a href="#">Términos y condiciones</a>
                     <a href="#">Política de privacidad</a>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggle = document.getElementById('navToggle');
+            var header = document.getElementById('mainHeader');
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    var open = header.classList.toggle('open');
+                    document.body.classList.toggle('menu-open', open);
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+                header.querySelectorAll('.nav-links a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        header.classList.remove('open');
+                        document.body.classList.remove('menu-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            window.addEventListener('scroll', function () {
+                document.body.classList.toggle('home-scrolled', window.scrollY > 60);
+            }, { passive: true });
+        });
+    </script>
 </body>
 
 </html>
