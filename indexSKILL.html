@@ -237,11 +237,12 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: var(--header-bg);
+            background: transparent;
             transition: background .25s var(--ease-out), box-shadow .25s var(--ease-out);
         }
 
         body.home-scrolled .main-header {
+            background: var(--header-bg);
             box-shadow: 0 8px 30px rgba(24, 36, 44, 0.14);
         }
 
@@ -1628,85 +1629,46 @@
             </div>
         </section>
 
-<section class="security-section">
+<section class="security section">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="sec-grid">
 
      <!--=========================================
                     INFORMACIÓN
                 ==========================================-->
- <div class="col-lg-8">
-                    <span class="section-mini">
-                        Innovamos e implementamos soluciones de energía renovable,  eficientes, confiables y accesibles.
-                    </span>
-                    <h2>
-                       Somos su mejor aliado energético integral
-                    </h2>
-                    <p class="section-description">
-                        Innovamos e implementamos soluciones de energía renovable,  eficientes, confiables y accesibles..
-                    </p>
-                    <div class="row mt-5">
-                        <div class="col-md-4">
-                            <div class="security-item fade-up show">
-                                <div class="security-icon">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
+ <div>
+                    <span class="sec-mini">Innovamos e implementamos soluciones de energía renovable, eficientes, confiables y accesibles.</span>
+                    <h2>Somos su mejor aliado energético integral</h2>
+                    <p class="sec-desc">Innovamos e implementamos soluciones de energía renovable, eficientes, confiables y accesibles.</p>
+                    <div class="sec-items">
+                        <div class="sec-item">
+                                <span class="icon"><i class="bi bi-shield-check"></i></span>
                                 <div>
-                                    <h5>
-                                         Cobertura en zonas sin red
-
-                                    </h5>
-                                    <p>
-                                        Llegamos a áreas rurales y urbanas donde el gas natural no llega.
-                                    </p>
+                                    <h5>Cobertura en zonas sin red</h5>
+                                    <p>Llegamos a áreas rurales y urbanas donde el gas natural no llega.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="security-item fade-up show">
-                                <div class="security-icon">
-                                    <i class="bi bi-people-fill"></i>
-                                </div>
+                        <div class="sec-item">
+                                <span class="icon"><i class="bi bi-people-fill"></i></span>
                                 <div>
-                                    <h5>
-                                        Seguridad certificada
-                                    </h5>
-                                    <p>
-                                        Cumplimos normativas técnicas para manejo de gas licuado y redes.
-                                    </p>
+                                    <h5>Seguridad certificada</h5>
+                                    <p>Cumplimos normativas técnicas para manejo de gas licuado y redes.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="security-item fade-up show">
-                                <div class="security-icon">
-                                    <i class="bi bi-headset"></i>
-                                </div>
+                        <div class="sec-item">
+                                <span class="icon"><i class="bi bi-headset"></i></span>
                                 <div>
-                                    <h5>
-                                        Atención 24/7
-                                    </h5>
-                                    <p>
-                                        Emergencias y soporte técnico disponibles todos los días del año.
-                                    </p>
+                                    <h5>Atención 24/7</h5>
+                                    <p>Emergencias y soporte técnico disponibles todos los días del año.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="security-item fade-up show">
-                                <div class="security-icon">
-                                    <i class="bi bi-clipboard-check"></i>
-                                </div>
+                        <div class="sec-item">
+                                <span class="icon"><i class="bi bi-clipboard-check"></i></span>
                                 <div>
-                                    <h5>
-                                        Suministro continuo
-                                    </h5>
-                                    <p>
-                                       Planificación de recargas para evitar interrupciones.
-                                    </p>
+                                    <h5>Suministro continuo</h5>
+                                    <p>Planificación de recargas para evitar interrupciones.</p>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1714,57 +1676,42 @@
                  <!--=========================================
                      IMAGEN
                 ==========================================-->
-                 <div class="col-lg-4 text-center">
-                    <img src="https://i.imgur.com/9P3znaP.png" class="img-fluid" alt="Aliado energético integral" style="border-radius: 18px; max-height: 588px; object-fit: cover; width: 100%;">
+                 <div class="sec-media">
+                    <img src="https://i.imgur.com/9P3znaP.png" alt="Aliado energético integral">
                 </div>
             </div>
-            <div class="section-title">
-                <span class="section-mini">Compromiso social y ambiental</span>
+
+            <div class="sec-impact">
+                <span class="eyebrow">Compromiso social y ambiental</span>
                 <h2>Impacto Bienestar</h2>
-            </div>
-            <div class="row g-4">
+                <div class="impact-grid">
                 <!-- ITEM 1 -->
-                            <div class="col-6 col-md-3">
-                                <div class="counter-card fade-up show">
-                                    <div class="counter-icon">
-                                        <i class="bi bi-people-fill"></i>
-                                    </div>
-                                    <h3>DEFORESTACIÓN CERO</h3>
-                                    <p>Cada cilindro de Gas licuado Propano preserva hectáreas de bosque nativo</p>
-                                </div>
+                            <div class="impact-card">
+                                <span class="icon"><i class="bi bi-people-fill"></i></span>
+                                <h3>DEFORESTACIÓN CERO</h3>
+                                <p>Cada cilindro de Gas licuado Propano preserva hectáreas de bosque nativo</p>
                             </div>
                             <!-- ITEM 2 -->
-                            <div class="col-6 col-md-3">
-                                <div class="counter-card fade-up show">
-                                    <div class="counter-icon">
-                                        <i class="bi bi-person-check-fill"></i>
-                                    </div>
-                                    <h3>SALUD RESPIRATORIA</h3>
-                                    <p>Reduce en 80% la exposición a material particulado vrs leña </p>
-                                </div>
+                            <div class="impact-card">
+                                <span class="icon"><i class="bi bi-person-check-fill"></i></span>
+                                <h3>SALUD RESPIRATORIA</h3>
+                                <p>Reduce en 80% la exposición a material particulado vrs leña</p>
                             </div>
                             <!-- ITEM 3 -->
-                            <div class="col-6 col-md-3">
-                                <div class="counter-card fade-up show">
-                                    <div class="counter-icon">
-                                        <i class="bi bi-geo-alt-fill"></i>
-                                    </div>
-                                    <h3>CALIDAD DE VIDA</h3>
-                                    <p>Acceso a cocción y calefacción confiable en comunidades rurales.</p>
-                                </div>
+                            <div class="impact-card">
+                                <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
+                                <h3>CALIDAD DE VIDA</h3>
+                                <p>Acceso a cocción y calefacción confiable en comunidades rurales.</p>
                             </div>
 
   <!-- ITEM 4 -->
-                            <div class="col-6 col-md-3">
-                                <div class="counter-card fade-up show">
-                                    <div class="counter-icon">
-                                        <i class="bi bi-headset"></i>
-                                    </div>
-                                    <h3>+247</h3>
-                                    <p>siempre disponibles</p>
-                                </div>
+                            <div class="impact-card">
+                                <span class="icon"><i class="bi bi-headset"></i></span>
+                                <h3>+247</h3>
+                                <p>siempre disponibles</p>
                             </div>
-                        </div>
+                </div>
+            </div>
         </div>
 
 </section>
@@ -1800,86 +1747,7 @@
                     </a>
                 </div>
             </div>
-        </section>
-
-        <!-- ============================================================
-             SEGURIDAD / ALIADO ENERGÉTICO
-        ============================================================= -->
-        <section class="security section">
-            <div class="container">
-                <div class="sec-grid">
-                    <div>
-                        <span class="sec-mini">Innovamos e implementamos soluciones de energía renovable, eficientes,
-                            confiables y accesibles.</span>
-                        <h2>Somos su mejor aliado energético integral</h2>
-                        <p class="sec-desc">Innovamos e implementamos soluciones de energía renovable, eficientes,
-                            confiables y accesibles.</p>
-                        <div class="sec-items">
-                            <div class="sec-item">
-                                <span class="icon"><i class="bi bi-shield-check"></i></span>
-                                <div>
-                                    <h5>Cobertura en zonas sin red</h5>
-                                    <p>Llegamos a áreas rurales y urbanas donde el gas natural no llega.</p>
-                                </div>
-                            </div>
-                            <div class="sec-item">
-                                <span class="icon"><i class="bi bi-people-fill"></i></span>
-                                <div>
-                                    <h5>Seguridad certificada</h5>
-                                    <p>Cumplimos normativas técnicas para manejo de gas licuado y redes.</p>
-                                </div>
-                            </div>
-                            <div class="sec-item">
-                                <span class="icon"><i class="bi bi-headset"></i></span>
-                                <div>
-                                    <h5>Atención 24/7</h5>
-                                    <p>Emergencias y soporte técnico disponibles todos los días del año.</p>
-                                </div>
-                            </div>
-                            <div class="sec-item">
-                                <span class="icon"><i class="bi bi-clipboard-check"></i></span>
-                                <div>
-                                    <h5>Suministro continuo</h5>
-                                    <p>Planificación de recargas para evitar interrupciones.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sec-media">
-                        <img src="https://i.imgur.com/yntTnma.jpg" alt="Aliado energético integral">
-                    </div>
-                </div>
-
-                <div class="sec-impact">
-                    <span class="eyebrow">Compromiso social y ambiental</span>
-                    <h2>Impacto Bienestar</h2>
-                    <div class="impact-grid">
-                        <div class="impact-card">
-                            <span class="icon"><i class="bi bi-people-fill"></i></span>
-                            <h3>Deforestación cero</h3>
-                            <p>Cada cilindro de Gas licuado Propano preserva hectáreas de bosque nativo</p>
-                        </div>
-                        <div class="impact-card">
-                            <span class="icon"><i class="bi bi-person-check-fill"></i></span>
-                            <h3>Salud respiratoria</h3>
-                            <p>Reduce en 80% la exposición a material particulado vrs leña</p>
-                        </div>
-                        <div class="impact-card">
-                            <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
-                            <h3>Calidad de vida</h3>
-                            <p>Acceso a cocción y calefacción confiable en comunidades rurales.</p>
-                        </div>
-                        <div class="impact-card">
-                            <span class="icon"><i class="bi bi-headset"></i></span>
-                            <h3>Atención 24/7</h3>
-                            <p>siempre disponibles</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
+</section>
 
         <!-- ============================================================
              CTA

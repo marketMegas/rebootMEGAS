@@ -195,12 +195,7 @@
             right: 0;
             z-index: 1000;
             background: var(--header-bg);
-            border-bottom: 1px solid var(--line-light);
             transition: box-shadow .25s var(--ease-out), background .25s var(--ease-out);
-        }
-
-        body.home-scrolled .main-header {
-            box-shadow: 0 8px 30px rgba(24, 36, 44, 0.14);
         }
 
         .nav-row {
@@ -245,25 +240,9 @@
             transition: color .15s ease-out;
         }
 
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 100%;
-            bottom: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: right .22s var(--ease-out);
-        }
-
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--green-deep);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            right: 0;
         }
 
         .nav-toggle {
