@@ -52,7 +52,7 @@
             line-height: 1.6;
             color: var(--ink);
             background: var(--ground);
-            padding-top: 99px;
+            padding-top: 106px;
             -webkit-font-smoothing: antialiased;
             text-wrap: pretty;
         }
@@ -130,8 +130,8 @@
 
         /* ------------------------------ TOPBAR ------------------------------ */
         .topbar {
-            background: transparent;
-            border-bottom: 1px solid var(--line-light);
+            background: #22322c;
+            border-bottom: 1px solid var(--line-dark);
             font-size: 12px;
             letter-spacing: 0.04em;
         }
@@ -147,7 +147,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--ground);
+            color: #ffffff;
             font-weight: 600;
             font-size: 15px;
         }
@@ -167,7 +167,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--ground);
+            color: #ffffff;
             font-weight: 600;
             font-size: 14px;
         }
@@ -183,7 +183,7 @@
         }
 
         .topbar-social a {
-            color: var(--ground);
+            color: #ffffff;
             font-size: 18px;
             transition: color .15s ease-out;
         }
@@ -200,7 +200,6 @@
             right: 0;
             z-index: 1000;
             background: var(--header-bg);
-            border-bottom: 1px solid var(--line-light);
             transition: box-shadow .25s var(--ease-out), background .25s var(--ease-out);
         }
 
@@ -216,7 +215,7 @@
         }
 
         .brand img {
-            height: 56px;
+            height: 68px;
             width: auto;
         }
 
@@ -409,6 +408,29 @@
             object-position: center;
             width: 100%;
             height: 100%;
+        }
+
+        .card-hogar .card-icon {
+            position: relative;
+        }
+
+        .card-hogar .card-icon img {
+            object-position: right center;
+            transform: translateX(16px);
+            border-radius: 12px;
+        }
+
+        .card-comercial .card-icon img {
+            object-fit: contain;
+            object-position: center;
+            padding: 22px;
+        }
+
+.card-comercial .card-icon img {
+            object-fit: contain;
+            object-position: center;
+            padding: 24px;
+            box-sizing: border-box;
         }
 
         .card-title {
@@ -980,7 +1002,7 @@
             }
 
             .topbar-phone {
-                color: var(--ground);
+                color: #ffffff;
             }
 
             .topbar-phone i {
@@ -1087,36 +1109,33 @@
     <!-- ============================================================
          TOPBAR
     ============================================================= -->
-    <div class="topbar">
-        <div class="container">
-            <span class="topbar-tag">
-                <i class="bi bi-bolt-fill"></i>
-                Energia que respira contigo
-            </span>
-            <div class="topbar-right">
-                <span class="topbar-phone">
-                    <i class="bi bi-telephone-fill"></i>
-                    Atención 24/7
+    <header class="main-header" id="mainHeader">
+        <div class="topbar">
+            <div class="container">
+                <span class="topbar-tag">
+                    <i class="bi bi-bolt-fill"></i>
+                    Energía que respira contigo
                 </span>
-                <span class="topbar-social">
-                    <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
+                <div class="topbar-right">
+                    <a class="topbar-phone" href="tel:+573225472787">
+                        <i class="bi bi-telephone-fill"></i>
+                        +57 322 5472787
                     </a>
-                    <a href="https://www.instagram.com/megas.sas.esp/" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@megas.sas?lang=es" aria-label="TikTok">
-                        <i class="bi bi-tiktok"></i>
-                    </a>
-                </span>
+                    <span class="topbar-social">
+                        <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/megas.sas.esp/" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@megas.sas?lang=es" aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- ============================================================
-         HEADER
-    ============================================================= -->
-    <header class="main-header" id="mainHeader">
         <div class="nav-wrap">
             <div class="container nav-row">
                 <a class="brand" href="https://www.megas.com.co">
@@ -1133,7 +1152,7 @@
                         <li><a href="https://www.megas.com.co">Inicio</a></li>
                         <li><a href="https://www.megas.com.co/nosotros">Nosotros</a></li>
                         <li><a class="active" href="https://www.megas.com.co/soluciones">Soluciones</a></li>
-                        <li><a href="https://www.megas.com.co">Blog</a></li>
+                        <li><a href="#">Blog</a></li>
                         <li><a href="https://www.megas.com.co/soluciones">Contacto</a></li>
                     </ul>
                 </div>
@@ -1161,7 +1180,7 @@
                     <!-- Hogar -->
                     <div class="solucion-card card-hogar">
                         <div class="card-icon">
-                            <img src="https://i.imgur.com/qWTWlnml.jpg" alt="Hogar" loading="lazy">
+                            <img src="https://i.imgur.com/UVfZeZ7h.jpg" alt="Hogar" loading="lazy">
                         </div>
                         <h3 class="card-title">HOGAR</h3>
                         <p class="card-text">

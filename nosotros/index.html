@@ -127,6 +127,7 @@
         /* ------------------------------ TOPBAR ------------------------------ */
         .topbar {
             background: #22322c;
+            border-bottom: 1px solid var(--line-dark);
             font-size: 12px;
             letter-spacing: 0.04em;
         }
@@ -206,7 +207,7 @@
         }
 
         .brand img {
-            height: 56px;
+            height: 68px;
             width: auto;
         }
 
@@ -230,7 +231,9 @@
         }
 
         .nav-links a {
+            display: inline-block;
             font-size: 12px;
+            line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.12em;
@@ -775,10 +778,6 @@
                 font-size: 13px;
             }
 
-            .nav-links a::after {
-                display: none;
-            }
-
             .topbar-tag,
             .topbar-social a {
                 color: var(--muted);
@@ -1175,10 +1174,6 @@
                     });
                 });
             }
-
-            window.addEventListener('scroll', function () {
-                document.body.classList.toggle('home-scrolled', window.scrollY > 60);
-            }, { passive: true });
         });
     </script>
 </body>
