@@ -168,7 +168,7 @@
 
         /* ------------------------------ TOPBAR ------------------------------ */
         .topbar {
-            background: transparent;
+            background: #22322c;
             border-bottom: 1px solid var(--line-dark);
             font-size: 12px;
             letter-spacing: 0.04em;
@@ -185,7 +185,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--ink);
+            color: #ffffff;
             font-weight: 600;
             font-size: 15px;
         }
@@ -205,7 +205,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--ink);
+            color: #ffffff;
             font-weight: 600;
             font-size: 14px;
         }
@@ -221,7 +221,7 @@
         }
 
         .topbar-social a {
-            color: var(--ink);
+            color: #ffffff;
             font-size: 18px;
             transition: color .15s ease-out;
         }
@@ -237,13 +237,12 @@
             left: 0;
             right: 0;
             z-index: 1000;
+            background: var(--header-bg);
             transition: background .25s var(--ease-out), box-shadow .25s var(--ease-out);
         }
 
         body.home-scrolled .main-header {
-            background: rgba(216, 228, 221, 0.96);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 0 rgba(24, 36, 44, 0.12);
+            box-shadow: 0 8px 30px rgba(24, 36, 44, 0.14);
         }
 
         .nav-row {
@@ -282,7 +281,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: var(--ink);
+            color: var(--ground);
             padding: 5px 0;
             position: relative;
             transition: color .15s ease-out;
@@ -301,20 +300,12 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #ffffff;
+            color: var(--green-deep);
         }
 
         .nav-links a:hover::after,
         .nav-links a.active::after {
             right: 0;
-        }
-
-        .nav-cta {
-            margin-left: 30px;
-        }
-
-        .nav-cta i {
-            font-size: 22px;
         }
 
         .nav-toggle {
@@ -330,7 +321,7 @@
         .nav-toggle span {
             width: 22px;
             height: 2px;
-            background: var(--ink);
+            background: var(--ground);
             border-radius: 2px;
             transition: transform .25s var(--ease-out), opacity .25s var(--ease-out);
         }
@@ -345,23 +336,6 @@
 
         .nav-toggle[aria-expanded="true"] span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
-        }
-
-        body.home-scrolled .topbar {
-            background: #22322c;
-        }
-
-        body.home-scrolled .nav-links a {
-            color: var(--muted);
-        }
-
-        body.home-scrolled .nav-links a:hover,
-        body.home-scrolled .nav-links a.active {
-            color: var(--ground);
-        }
-
-        body.home-scrolled .nav-toggle span {
-            background: var(--ground);
         }
 
         .mobile-close {
@@ -1310,22 +1284,13 @@
                 grid-template-rows: 1fr;
             }
 
-            .main-header {
-                background: var(--header-bg);
-                border-bottom: 1px solid var(--line-light);
-            }
-
-            .topbar {
-                border-bottom-color: var(--line-light);
-            }
-
             .topbar-tag,
             .topbar-social a {
                 color: var(--muted);
             }
 
             .topbar-phone {
-                color: var(--ground);
+                color: #ffffff;
             }
 
             .topbar-phone i {
@@ -1339,10 +1304,6 @@
             .nav-links a:hover,
             .nav-links a.active {
                 color: var(--ground);
-            }
-
-            .nav-toggle span {
-                background: var(--ground);
             }
 
             .nav-panel-inner {
@@ -1366,16 +1327,11 @@
 
             .nav-links a {
                 padding: 12px 0;
-                border-bottom: none;
                 font-size: 13px;
             }
 
             .nav-links a::after {
                 display: none;
-            }
-
-            .nav-cta {
-                margin: 0;
             }
 
             .hero {
@@ -1577,13 +1533,13 @@
             <div class="container">
                 <span class="topbar-tag">
                         <i class="bi bi-bolt-fill"></i>
-                        Energia que respira contigo
+                        Energía que respira contigo
                     </span>
                 <div class="topbar-right">
-                    <span class="topbar-phone">
+                    <a class="topbar-phone" href="tel:+573225472787">
                         <i class="bi bi-telephone-fill"></i>
-                        Atención 24/7
-                    </span>
+                        +57 322 5472787
+                    </a>
                     <span class="topbar-social">
                         <a href="https://www.facebook.com/p/Megas-SAS-ESP-100089680574535/" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
@@ -1601,7 +1557,7 @@
 
         <div class="nav-wrap">
             <div class="container nav-row">
-                <a class="brand" href="#">
+                <a class="brand" href="https://www.megas.com.co">
                     <img src="https://i.imgur.com/dsjyB0p.png" alt="Megas Energía">
                 </a>
                 <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navPanel"
@@ -1618,10 +1574,6 @@
                         <li><a href="#">Blog</a></li>
                         <li><a href="https://www.megas.com.co/soluciones">Contacto</a></li>
                     </ul>
-                    <a class="btn btn-accent nav-cta" href="https://wa.me/573225472787">
-                        Solicitar servicio
-                        <i class="bi bi-arrow-right-circle-fill"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -1636,19 +1588,19 @@
         <div class="slider-container">
             <div class="slide active">
                 <div class="slide-image-wrapper">
-                    <img src="https://i.imgur.com/nrW9elB.png" alt="Energía Megas GLP">
+                    <img src="https://i.imgur.com/Shp9rme.png" alt="Energía Megas GLP">
                 </div>
                 <div class="slide-overlay"></div>
             </div>
             <div class="slide">
                 <div class="slide-image-wrapper">
-                    <img src="https://i.imgur.com/TA16rcC.jpeg" alt="Familia con GLP Megas">
+                    <img src="https://i.imgur.com/qWTWlnm.jpg" alt="Familia con GLP Megas">
                 </div>
                 <div class="slide-overlay"></div>
             </div>
             <div class="slide">
                 <div class="slide-image-wrapper">
-                    <img src="https://i.imgur.com/9P3znaP.png" alt="Hogares con GLP Megas">
+                    <img src="https://i.imgur.com/4xfGQgc.jpg" alt="Hogares con GLP Megas">
                 </div>
                 <div class="slide-overlay"></div>
             </div>
